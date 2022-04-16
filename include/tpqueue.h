@@ -15,11 +15,10 @@ class TPQueue {
         last = 0;
     }
     void push(T elem) {
-        if (last - first >= size) {
-            cout << "Full!" << endl;
-        } else {
+        if (last - first <= size) {
             int iter = last++;
-            for (iter; (--iter >= first) && (arr[iter % size].prior < elem.prior);) {
+            for (iter; (--iter >= first) 
+                && (arr[iter % size].prior < elem.prior);) {
                 arr[(iter + 1) % size] = arr[iter % size];
             }
             arr[(iter + 1) % size] = elem;
@@ -30,7 +29,7 @@ class TPQueue {
     }
 };
 
-struct SYM { 
+struct SYM {
   char ch;
   int prior;
 };
