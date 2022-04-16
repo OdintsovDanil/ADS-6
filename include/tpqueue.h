@@ -17,7 +17,7 @@ class TPQueue {
     void push(T elem) {
         if (last - first <= size) {
             int iter = last++;
-            for (iter; (--iter >= first) 
+            for (iter; (--iter >= first)
                 && (arr[iter % size].prior < elem.prior);) {
                 arr[(iter + 1) % size] = arr[iter % size];
             }
