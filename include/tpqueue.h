@@ -16,7 +16,7 @@ class TPQueue {
 	}
 	void push(T elem) {
 		if (last - first >= size) {
-			throw std::string("Full!");
+			cout << "Full!" << endl;
 		} else {
 			int iter = last++;
 			for (iter; (--iter >= first) && (arr[iter % size].prior < elem.prior);) {
